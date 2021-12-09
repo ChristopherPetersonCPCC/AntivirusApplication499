@@ -1,0 +1,22 @@
+﻿<h1>Scans</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 33%">File Name</th>
+            <th style="width: 33%">Infected</th>
+            <th style="width: 33%">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let scanhistory of scanhistories">
+            <td>{{scanhistory.fileName}}</td>
+            <td>{{scanhistory.infectedStatus}}</td>
+            <td>{{scanhistory.date}}</td>
+        </tr>
+        <tr *ngIf="!scanhistories">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

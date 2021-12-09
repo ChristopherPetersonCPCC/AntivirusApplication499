@@ -1,0 +1,30 @@
+﻿<div class="p-4">
+    <div class="container">
+        <h1>Hi {{user.firstName}}!</h1>
+        <p>Choose a file to scan</p>
+        <input type="file" class="file-input"
+       (change)="onFileSelected($event)" #fileUpload>
+       <div class="col-4">
+          <button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()">
+              Upload file
+          </button>
+      </div>
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th style="width: 33%">File Name</th>
+                  <th style="width: 33%">Infected</th>
+                  <th style="width: 33%">Date</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngIf="bool==true">
+                  <td>{{report.fileName}}</td>
+                  <td>{{report.infectedStatus}}</td>
+                  <td>{{report.date}}</td>
+              </tr>
+          </tbody>
+      </table>
+      <p><a routerLink="/users">Check your Scan History</a></p>
+    </div>
+</div>
